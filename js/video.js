@@ -57,7 +57,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 	console.log("The value of mute is " + video.muted)
 })
 
-document.querySelector("#slider").addEventListener("click", function() {
+document.querySelector("#slider").addEventListener("input", function() {
 	console.log(this.value)
 	// video.volume = this.value / 100
 	document.querySelector("#volume").innerHTML = this.value + "%"
