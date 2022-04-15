@@ -31,6 +31,17 @@ document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Current speed is " + video.playbackRate)
 })
 
+document.querySelector("#skip").addEventListener("click", function() {
+	console.log("Original location " + video.currentTime)
+	if (video.currentTime + 15 > video.duration) {
+		video.currentTime = 0
+	}
+	else {
+		video.currentTime += 15
+	}
+	console.log("New location " + video.currentTime)
+})
+
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("The value of mute is " + video.muted)
 
@@ -44,7 +55,6 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 
 	console.log("The value of mute is " + video.muted)
-
 })
 
 document.querySelector("#slider").addEventListener("click", function() {
@@ -53,3 +63,13 @@ document.querySelector("#slider").addEventListener("click", function() {
 	document.querySelector("#volume").innerHTML = this.value + "%"
 	console.log(this.value)
 })
+
+document.querySelector("#vintage").addEventListener("click", function() {
+	video.classList.add("oldSchool")
+})
+
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove("oldSchool")
+})
+
+
